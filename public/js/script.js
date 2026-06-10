@@ -12,13 +12,9 @@ const mainApp = document.querySelector(".curd");
 // const rechnenBox = document.querySelector(".rechnen-box");
 const chartBox = document.querySelector(".container");
 
-
 const connectData = document.querySelector(".success");
 
 
-
-
-  
 
 // Get the message element
 const message = document.getElementById('#msgAll');

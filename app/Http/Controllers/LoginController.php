@@ -16,7 +16,7 @@ class LoginController extends Controller
     //
     public function login(Request $request) {
         $userData = $request->validate([
-            'email' => ['required', 'email'],
+            'email'    => ['required', 'email'],
             'password' => ['required'],
         ]);
     
@@ -48,11 +48,9 @@ class LoginController extends Controller
 
                     Users::where('email', $userData['email'])->update(['status_user' => 'online']);
 
-                     // Check user_type and redirect accordingly
                     if ($user->user_type == 'administrator') {
                         return redirect()->intended('home');
                     } else {
-                        // return redirect()->intended('user-page');
                         return redirect()->intended('home');
                     }
                 }
@@ -121,7 +119,7 @@ class LoginController extends Controller
                 DB::table('user_table')
                     ->where('email', $email)
                     ->update(['password' => $resetPassword]);
-                }
+            }
                 return redirect('resetpassword')->withErrors(['error' => 'Das Passwort wurde zurückgesetzt']);
                
 
@@ -131,6 +129,5 @@ class LoginController extends Controller
         }
         
     }
-
 
 }

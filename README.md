@@ -70,6 +70,9 @@ Webbasierte Anwendung zur Verwaltung von Lagerbeständen, Materialien, Benutzern
 ### ⭐ Merkliste
 ![Wishlist](screenshots/merkliste.png)
 
+### ⭐ OTP
+![Wishlist](screenshots/OTP-Verification.png)
+
 
 ---
 
@@ -89,6 +92,9 @@ Webbasierte Anwendung zur Verwaltung von Lagerbeständen, Materialien, Benutzern
 ## ✨ Highlights
 
 - Lagerverwaltung mit CRUD-System
+- User Registration
+- Email Verification with OTP
+- Login Authentication
 - PDF-Export der Materialien
 - Diagramme & Statistiken
 - Benutzerverwaltung mit Status & Blockierung
