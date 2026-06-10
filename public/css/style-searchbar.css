@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.box {
+    position: relative;
+    /* min-width: 500px; */
+    text-align: center;
+    margin-top: 20px;
+}
+.box form {
+    position:relative;
+}
+.box form:hover{
+    border: 1px solid #333;
+}
+.box form:hover .i{
+    color: #5cb85c;
+}
+
+.box p {
+    /* color: #6c757d ; */
+    font-size: 12px;
+    /* float: left; */
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.box input {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    box-sizing: border-box;
+  
+}
+.box form span {
+    position: absolute;
+}
+.box form .i{
+    /* display: none; */
+    position:absolute;
+    top: 15px;
+    left: 5px;
+    z-index: 9;
+}
+.box .suchen {
+    position: relative;
+    background: #ffffff;
+    width: 180px;
+    height: 35px;
+    outline: none;
+    border: none;
+    font-weight: normal;
+    border-left: 1px solid #333;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 0px 25px;
+    
+    border-radius: 5px 0 0 5px; 
+}
+.box .suchen:focus {
+    outline: none;
+    box-shadow: none;
+}
+.box form select {
+    position: relative;
+    width: 150px;
+    border: none;
+    outline: none;
+    height: 35px;
+    left: -3px;
+    color: #333;
+    background: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    /* padding: 15px 16px 12px; */
+    margin: -2px;
+    border-radius: 0;
+    border-right: 5px solid #333;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+
+/*media */
+@media (max-width: 550px) {
+    
+    .box button{
+        width: 40px;
+    }
+    .box button .i{
+        display: block;
+    }
+    .box input[type="text"] {
+        width: 130px;
+    }
+    /* .box select {
+        width: 90px;
+    } */
+    .box form select {
+        width: 120px;
+    }
+
+}

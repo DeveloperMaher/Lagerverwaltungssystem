@@ -1,0 +1,427 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+user-select: none;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+height: 100vh;
+}
+
+/* .main {
+    min-height: 100%;
+    position: relative;
+} */
+.content {
+    /* padding-bottom: 40px; */
+    min-height: 100vh;
+}
+/*-------------------------------------------*/
+.head h1 {
+    letter-spacing: 5px;
+    /* margin-top: 20px; */
+    font-weight: bold;
+    color: #fff;
+    padding-top: 10px;
+    margin: 0;
+    text-shadow:
+    0 0 7px #03e203,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #04ad20,
+    0 0 102px #03e203,
+    0 0 151px #04ad20;
+}
+
+.head p {
+    letter-spacing: 3px;
+    word-spacing: 3px;
+    color: #fff;
+    padding: 10px 0;
+}
+.head {
+    text-align: center;
+    margin: 0px 0px 30px;
+    user-select: none;
+    background-color: #333;
+    justify-content: center;
+}
+.head .date-heder {
+    color: #fff;
+    top: 35px;
+    margin-left: 10px;
+}
+
+/* start add-material-list */
+.add-material-list{
+    background: #fff;
+    width: 300px;
+    max-height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border: 1px solid #333;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 999;
+    visibility: hidden;
+}
+
+.add-material-list > button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border: none;
+    background: transparent;
+    top: 8px;
+    right: 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-material-list .fa-times:hover {
+    border: 1px solid #d8170a;
+    border-radius: 50% ;
+}
+.add-material-list .fa-times {
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    color: #e4382c;
+}
+.add-material-list .input-fenster {
+    width: 200px;
+    height: 25px;
+    background: transparent;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+.add-material-list .input-fenster::placeholder {
+    font-size: 14px;
+}
+.add-material-list .add-material-fenster {
+    width: 25px;
+    height: 25px;
+    margin-left:7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-material-list .label-fenster {
+    margin-bottom: 5px;
+    padding: 0;
+    margin-top: 0;
+    font-size: 14px;
+}
+.add-material-list table {
+    font-size: 14px;
+    height: 100%;
+}
+.add-material-list table th,
+.add-material-list table td {
+    border: 1px solid #666;
+}
+.add-material-list .tabel-material #löschen {
+    width: 50px;
+    color: #d8170a;
+    background: #fff;
+    border: none;
+}
+.add-material-list .tabel-material #löschen:hover {
+    color: #e4382c;
+}
+/* end add-material-list */
+
+.container form .btn-add {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 20px !important;
+    height: 38px !important;
+    padding: 0;
+    margin: 0;
+    left: -5px;
+}
+.container form .btn-add .open-fenster{
+    width: 20px;
+    height: 20px;
+    line-height: 23px;
+    font-size: larger;
+    background: #198754;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    border: 1px solid transparent;
+}
+form .btn-add .open-fenster:hover{
+    border: 1px solid #333;
+    background: #04ad20;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #5cb85c;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #5cb85c;
+}
+
+.form-control-danger {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #d9534f;
+    border-color: #d9534f;
+    /* box-shadow: none; */
+}
+
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.app-stu[type=number]::-webkit-inner-spin-button,
+.app-stu[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.container .app-stu{
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.app-stu {
+    user-select: none;
+    color:#333; 
+    height:35px;
+    width:80px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#kunden-opt {
+    margin-left: 10px;
+}
+.title p {
+    padding-bottom: 10px;
+    font-size: 17px;
+}
+.title h3 {
+    position: relative;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+.title h3::before {
+    content: "";
+    position: absolute;
+    width: 370px;
+    height: 1px;
+    background-color: #ccc;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.add-page button,
+.add-page a {
+    margin: 0 10px;
+}
+/*footer*/
+footer {
+    width: 100%;
+    height: 40px;
+    border-top: 1px solid #ccc;
+    position: absolute;
+    /* position: relative; */
+    /* bottom: 0; */
+    /* margin-top: 34px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .von {
+    /* position: relative; */
+    height: 100%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+footer img {
+    width: 80px;
+}
+
+
+/* media */
+@media (max-width: 600px) {
+    .head .date-heder {
+      display: none;
+    }
+    .head p {
+        font-size: 12px;
+    }
+    .title h3{
+        font-size: 19px;
+    }
+    .title p {
+        font-size: 15px;
+    }
+}
+
+/* -------------------------Apprechner------------------- */
+.rechnen-box #result {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+form #abbrechen,
+form #rechnen-material{
+    width: 100px;
+}
+
+
+.change-value {
+    background: #fff;
+    /* border: 1px solid #666; */
+    margin: 0 35px;
+    padding-top: 20px;
+    border-radius: 5px;
+    display: block;
+    min-width: 300px;
+    border-top: 1px solid #ccc;
+}
+.change-value form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.change-value form input {
+    width: 150px;
+    height: 30px;
+    background: transparent;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin: 5px 0 10px 5px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+.change-value form input:focus {
+    border: 1px solid #666;
+}
+.change-value form input::placeholder {
+    font-size: 14px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input{
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.change-value .btns {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.change-value .btns .change,
+.change-value .btns .default {
+  margin-right: 10px;
+  width: 70px;
+}
+
+.change-value > p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+}
+
+/* Start Remember List  */
+
+#msg-stu .rememberlist-text{
+    color: #666;
+    font-size: 13px;
+}
+#msg-stu .rememberlist-text .button{
+    background: transparent !important;
+    border: none !important;
+}
+#msg-stu .rememberlist-text .rememberlist-btn{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #198754;
+    color: #fff;
+    font-size: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    padding: 0px 0px 4px 0px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#msg-stu .rememberlist-text .rememberlist-btn:hover{
+    background: #23ac6c;  
+}
+form .rememberlist-msg {
+    position: fixed;
+    top: 90px;
+    right: 5px;
+    width: 400px; 
+}
+form .rememberlist-msg a{
+    text-decoration: none;
+}
+form .rememberlist-msg a .merkliste{
+    font-size: 13px;
+    position: relative;
+    color: #595959;
+    top: 10px;
+    transition:all .3s ease-in-out;
+}
+form .rememberlist-msg a:hover .merkliste{
+    font-size: 16px;
+    color: #198754;
+}
+/* End Remember List  */
