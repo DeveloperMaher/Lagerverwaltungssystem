@@ -13,11 +13,11 @@
    
 
     @if (session('delete'))
-        <div id="messageDiv" class="d-flex justify-content-center alert alert-danger alert-dismissible w-50 text-center">
+        <div id="messageDiv" class="d-flex justify-content-center alert alert-danger alert-dismissible text-center">
             {{ session('delete') }}
         </div>
     @elseif (session()->has('message'))
-        <div id="messageDiv" class="d-flex justify-content-center alert alert-success alert-dismissible w-50 text-center">
+        <div id="messageDiv" class="d-flex justify-content-center alert alert-success alert-dismissible text-center">
             {{ session()->get('message') }}
         </div> 
     @endif
@@ -113,20 +113,6 @@
      <!-- Start Footer section -->
      @include('footer')  
      <!-- End Footer section -->
-
-   
-    <script defer>
-        // const deleteAlert = document.getElementById('delete-alert');
-        
-        // console.log(deleteAlert);
-        
-        // setTimeout(() => {
-            
-        //     if (deleteAlert) {
-        //         deleteAlert.style.display = 'none';
-        //     }
-        // }, 5000);
-    </script>
 
     <script>
         // Function to hide the message after 3 seconds

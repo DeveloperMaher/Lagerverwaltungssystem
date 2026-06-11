@@ -71,7 +71,6 @@
     background: #fff;
     font-size: 15px;
     font-weight: normal;
-    /* padding: 15px 16px 12px; */
     margin: -2px;
     border-radius: 0;
     border-right: 5px solid #333;
@@ -86,17 +85,21 @@
     .box button{
         width: 40px;
     }
+
     .box button .i{
         display: block;
     }
+
     .box input[type="text"] {
         width: 130px;
     }
-    /* .box select {
-        width: 90px;
-    } */
+ 
     .box form select {
-        width: 120px;
+        width: 130px;
+    }
+
+    .box .suchen {
+        width: 150px;
     }
 
 }

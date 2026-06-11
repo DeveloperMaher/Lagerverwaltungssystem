@@ -4,15 +4,23 @@
     <link rel="stylesheet" href="{{ asset('css/style.css')}}">
 </head>
 <body>
-  @include('header')  
+    <nav class="head">
+        <h1>LVS</h1>
+        <p>Lagerverwaltungssystem</p>
+        <div class = "position-absolute start-0 text-center date-heder">
+            {{ now()->format('Y.m.d') }} <br>
+            Welcome back <strong class="text-success"> {{ Session::get('Name') }}</strong>
+        </div>
+        <div class="position-absolute btn-group dropleft list-actions">
 
-  @if(session('delete'))
-      <div class="d-flex justify-content-center alert alert-success alert-dismissible w-50 text-center">
-          {{ session('delete') }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-  @endif
-    <div class="contaier">
+            <a class="btn btn-sm btn-danger p-1" href="{{url('/logout')}}" data-toggle="tooltip" data-placement="top" title="abmelden">
+                <i class="fa fa-sign-out-alt mx-2"></i>
+            </a>
+        </div>
+    </nav>
+
+
+      <div class="contaier">
         <div class="curd">    
             <div class="text-center mb-4 title">
                 <h3>Abschnitt der Materialien & Suche</h3>
@@ -24,20 +32,7 @@
                 @include('search')  
 
                 <div class="container-fluid table-responsive mb-3 text-center" id="table">
-
-                   @include('pageform')
-
-                    <!-- Start form to Print the table -->
-                    <div class="position-absolute print">
-                        <a href="{{ route('materials.pdf') }}" 
-                        target="_blank"
-                        title="Materialtabelle als PDF speichern"
-                        data-toggle="tooltip">
-                            <i class="fa fa-print"></i>
-                        </a>
-                    </div>
-                    <!-- End form to Print the table -->
-
+        
                     <table class="table table-bordered mt-2 table-striped" id="table-data">
                         <label class="mt-4 text-dark text-capitalize font-weight-bold">die materialtabelle</label>
 
@@ -52,13 +47,12 @@
                                 <th>Zweck</th>
                                 <th style="width: 110px">Datum</th>
                                 <th>Anmerkungen</th>
-                                <th>bearbeiten</th>
-                                <th>löschen</th>
+                       
                             </tr>
                         </thead>
                         <tbody id="tbody"> 
                          
-                         @foreach ($materials->take($totalRecordsPerPage) as $item) 
+                         @foreach ($materials as $item) 
                            
                             <form action="{{ url('home', $item->id) }}" method="Post">
                               @csrf
@@ -74,40 +68,12 @@
                                 <td>{{$item->zweck}}</td>
                                 <td>{{$item->date}}</td>
                                 <td>{{$item->anmerkungen}}</td>
-                                <td>
-                                    <a href="{{url('edit', ['id' => $item->id])}}" class="" id="aktualisieren"
-                                        data-toggle="tooltip" data-placement="top" title="Reihe bearbeiten">
-                                        <i class="fa fa-user-edit"></i>
-                                    </a>
-                                </td>
-
-                                <td>
-                                    <button type="submit" class='btn bg-transparent border-transparent'>
-                                        <a href="{{url('deleteMaterial', ['id' => $item->id])}}"  id="löschen" data-toggle="tooltip" data-placement="top" title="Reihe löschen">
-                                            <i class="fa fa-trash-alt"></i>
-                                        </a>
-                                    </button>
-                                </td>
+                                
                             </tr>
                             
                             </form>
                            
                         @endforeach
-
-                        <div id="" class="delete-msg" style="display:none;">
-                            <div class="popup-content">
-                                <div class="cont">
-                                    <span class="fa fa-check-circle text-success"></span>
-                                    <span class="msg"><strong class="bestät">Bestätigungsmeldung</strong><br>
-                                        Möchten Sie wirklich die Reihe () löschen?
-                                    </span>
-                                </div>
-                                <div class="btns">
-                                    <button class="cancel-btn" onclick="">Abbrechen</button>
-                                    <a class="delete-btn" href="">Ja</a>
-                                </div>
-                            </div>
-                        </div>
 
                         </tbody>
                     </table> 
@@ -122,8 +88,9 @@
             </div>
             
         </div>
-    </div>   
-    
+    </div>  
+
+
     @include('footer')  
     <script src="{{asset('js/script.js')}}"></script>
     <script>

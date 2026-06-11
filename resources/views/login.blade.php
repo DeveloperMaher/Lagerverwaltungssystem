@@ -17,7 +17,7 @@
     
     <div>
         @if(session('logout'))
-            <div id="info-logout" class="d-flex justify-content-center alert alert-success alert-dismissible w-50 text-center">
+            <div id="info-logout" class="d-flex justify-content-center alert alert-success alert-dismissible text-center">
                 {{ session('logout') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>

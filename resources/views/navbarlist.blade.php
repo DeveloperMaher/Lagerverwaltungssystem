@@ -40,8 +40,8 @@
         </a>
         @endif
 
-            <div class="dropdown-divider"></div>
-        <a class="dropdown-item text-danger" href="{{url('/logout')}}" data-toggle="tooltip" data-placement="top" title="abmelden">
+        <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-danger" href="{{url('/logout')}}" data-toggle="tooltip" data-placement="top" title="abmelden">
             <i class="fa fa-sign-out-alt mx-2"></i>abmelden</a>
     </div>
 </div>

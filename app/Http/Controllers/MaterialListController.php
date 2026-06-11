@@ -12,7 +12,6 @@ class MaterialListController extends Controller
 {
     public function index($id){
         $material = Materials::find($id);
-          // If the material is not found, you can handle it accordingly (e.g., redirect or show an error message)
           if (!$material) {
             return redirect()->route('home')->with('error', 'Material not found.');
         }

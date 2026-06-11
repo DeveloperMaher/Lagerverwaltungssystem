@@ -11,6 +11,7 @@ use App\Http\Controllers\RechnerApp;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\RememberController;
 /*
@@ -26,9 +27,24 @@ use App\Http\Controllers\RememberController;
 
 // Authentication routes
 Route::get('/login', function () {
+     if (session()->has('LOGGED_IN')) {
+
+        if (session('user_type') === 'administrator') {
+            return redirect('/home');
+        }
+
+        return redirect('/homeUser');
+    }
     return view('/login');
 });
 
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/resetpassword', function () {
+    return view('resetpassword');
+});
 Route::post('login', [LoginController::class, 'login']);
 
 Route::get('logout', [LogoutController::class, 'logout']);
@@ -38,13 +54,6 @@ Route::post('register', [LoginController::class, 'register']);
 
 Route::post('resetpassword', [LoginController::class, 'resetPassword']);
 
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::get('/resetpassword', function () {
-    return view('resetpassword');
-});
 
 
 Route::group(['middleware'=> 'mygroub'],function () {
@@ -52,6 +61,9 @@ Route::group(['middleware'=> 'mygroub'],function () {
     Route::get('/', function () {
         return view('/home');
     });
+
+    Route::get('/homeUser', [HomeController::class, 'homeUser'])
+    ->name('homeUser');
 
     //DatenBank the deleted Materials
     Route::get('/datenbank/deleted_material', [DeletedDatenList::class, 'index']);

@@ -57,25 +57,21 @@ class RememberController extends Controller
         $item = Rememberlist::find($id);
     
         if(!$item){
-            // Handle case where item is not found
             return redirect()->back()->with('error', 'Das Material konnte nicht gefunden werden.');
         }
-    
-      
-    
-        if($item->status){
-            return redirect()->back()->with('message', 'Die Id.Nr :'.$item->id.' wurde bereits bestellt.');
-         
-            
-        } else{
-            $item->status = 1;
-        }
-        // Set the updated_at timestamp
+
+        // Toggle status
+        $item->status = !$item->status;
+
         $item->updated_at = now();
         $item->save();
 
-        return redirect()->back()->with('message', 'Das Material wurde erfolgreich aktualisiert.');
-       
+        return redirect()->back()->with(
+            'message',
+            $item->status
+                ? 'Das Material wurde als bestellt markiert.'
+                : 'Das Material wurde als nicht bestellt markiert.'
+        );
     }
     
 

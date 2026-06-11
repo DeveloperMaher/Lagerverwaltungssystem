@@ -41,6 +41,7 @@ class LoginController extends Controller
 
                     $request->session()->regenerate();
                     $request->session()->put('LOGGED_IN', true);
+                    $request->session()->put('user_type', $user->user_type);
                     $request->session()->put('Name', $user->name);
                     $request->session()->put('Email', $userData['email']);
                    
@@ -51,7 +52,7 @@ class LoginController extends Controller
                     if ($user->user_type == 'administrator') {
                         return redirect()->intended('home');
                     } else {
-                        return redirect()->intended('home');
+                        return redirect()->intended('homeUser');
                     }
                 }
             }
@@ -70,12 +71,12 @@ class LoginController extends Controller
         $userType = $request->get('user_type');
         
         $data = array(
-            'name'      => $name,
-            "email"     => $email,
-            "password"  => $password,
-            "user_type" => $userType,
-            "status_user" => 'offline',
-            "active_user" => 'inactive'
+            'name'          => $name,
+            "email"         => $email,
+            "password"      => $password,
+            "user_type"     => $userType,
+            "status_user"   => 'offline',
+            "active_user"   => 'active'
         );
 
        

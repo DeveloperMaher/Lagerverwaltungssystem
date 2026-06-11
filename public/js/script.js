@@ -90,19 +90,6 @@ function reset(){
 }
 
 
-// Clear the data when it are added
-// function clearData() {
-//     material.selectedIndex = 0;
-//     farbe.selectedIndex = 0;
-//     höhe.selectedIndex = 0;
-//     paket.value = '';
-//     stück.value = '';
-//     zweck.value = '';
-//     anmerkung.value = '';
-// }
-
-
-
 // delete Row of the data from the table
 function deleteRow(i){
     dataMaterial.splice(i,1);
